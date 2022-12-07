@@ -10,8 +10,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma'),
-      require('karma-sonarqube-unit-reporter')
+      require('@angular-devkit/build-angular/plugins/karma')
+      
     ],
     client: {
       jasmine: {
@@ -30,11 +30,11 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'text-summary' },
-        { type: 'lcov'}
+        { type: 'text-summary' }
+      
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress', 'kjhtml','sonarqube'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
